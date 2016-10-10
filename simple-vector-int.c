@@ -10,7 +10,7 @@
 // (C) 2016 Hugh Young, Tuning Fork Productions
 // This code is made freely available under the WTFPL: http://wtfpl.net
 
-#include "vector-int.h"
+#include "simple-vector-int.h"
 #include <stdlib.h>
 
 /// Returns a newly allocated vector of size 8.

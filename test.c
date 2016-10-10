@@ -13,7 +13,7 @@
 // (C) 2016 Hugh Young, Tuning Fork Productions
 // This code is made freely available under the WTFPL: http://wtfpl.net
 
-#include "vector-int.h"
+#include "simple-vector-int.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -27,6 +27,7 @@ int main(int argc, char ** argv)
   // Input: Simply push stdin data as vector entries
   while ( fgets(input, 9, stdin) != NULL )
   {
+    // Error handling / processing happens here.
     vector_int_push(v, atoi(input));
   }
 
