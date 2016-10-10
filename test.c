@@ -19,7 +19,7 @@
 
 int main(int argc, char ** argv)
 {
-  vector_int * v = vector_int_init();
+  simple_vector_int * v = simple_vector_int_init();
   char * input = malloc(sizeof(char) * 9);
 
   printf("Input numbers seperated by newlines.\nPress Control-D (EOF) to finish.\n");
@@ -28,7 +28,7 @@ int main(int argc, char ** argv)
   while ( fgets(input, 9, stdin) != NULL )
   {
     // Error handling / processing happens here.
-    vector_int_push(v, atoi(input));
+    simple_vector_int_push(v, atoi(input));
   }
 
   // EOF: Output stats
@@ -39,5 +39,5 @@ int main(int argc, char ** argv)
     printf("%i\n", v->data[i]);
   }
   printf("\n");
-  vector_int_free(v);
+  simple_vector_int_free(v);
 }

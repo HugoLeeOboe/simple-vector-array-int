@@ -14,17 +14,17 @@
 #include <stdlib.h>
 
 /// Returns a newly allocated vector of size 8.
-vector_int * vector_int_init()
+simple_vector_int * simple_vector_int_init()
 {
-  vector_int * v = (vector_int *) malloc(sizeof(vector_int));
+  simple_vector_int * v = (simple_vector_int *) malloc(sizeof(simple_vector_int));
   v->size = 0;
-  v->capacity = VECTOR_INT_INIT_CAPACITY;
+  v->capacity = SIMPLE_VECTOR_INT_INIT_CAPACITY;
   v->data = (int *) malloc(sizeof(int) * v->capacity);
   return v;
 }
 
 /// Double the size of the array (called by push)
-void vector_int_resize(vector_int * v)
+void simple_vector_int_resize(simple_vector_int * v)
 {
   int * data = (int *) realloc(v->data, sizeof(int) * v->capacity * 2);
   if (data) {
@@ -36,10 +36,10 @@ void vector_int_resize(vector_int * v)
 }
 
 /// Push a new element to the array
-void vector_int_push(vector_int * v, int item)
+void simple_vector_int_push(simple_vector_int * v, int item)
 {
   if (v->size >= v->capacity) {
-    vector_int_resize(v);
+    simple_vector_int_resize(v);
   }
 
   v->data[v->size] = item;
@@ -47,7 +47,7 @@ void vector_int_push(vector_int * v, int item)
 }
 
 /// Free the container and its data
-void vector_int_free(vector_int * v)
+void simple_vector_int_free(simple_vector_int * v)
 {
   free(v->data);
   free(v);
